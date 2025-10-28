@@ -1,0 +1,134 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* stack header, main, footer */
+  min-height: 100vh;      /* full viewport height */
+}
+
+/* Header */
+.header {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.header p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
+
+/* Main Dashboard Container */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex-grow: 1; /* makes main grow to push footer down */
+}
+
+/* Account Info & Actions Sections */
+.account-info, .actions {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.account-info h3, .actions h3 {
+  color: #0a3d62;
+  margin-bottom: 1rem;
+}
+
+.account-info p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* Buttons for actions */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn {
+  background: #38ada9;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  background: #079992;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* pushes footer to bottom */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+
+  .account-info, .actions {
+    padding: 1rem;
+  }
+}

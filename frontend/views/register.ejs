@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Quitel Bank</title>
+  <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h2>Quitel Bank</h2>
+    <p>Create Your Account</p>
+    <a href="/" class="back-home">← Back to Home</a>
+  </header>
+
+  <!-- Register Section -->
+  <main class="register-container">
+    <h3>Join Quitel Bank</h3>
+    <p>Open an account and start your secure banking journey today.</p>
+
+   <form action="/register" method="post" class="form">
+  <input type="text" name="fullName" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <input type="password" name="password" placeholder="Password" required />
+  <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+
+  <!-- Optional: Choose account type -->
+  <select name="accountType">
+    <option value="savings">Savings</option>
+    <option value="checking">Checking</option>
+  </select>
+
+  <button type="submit" class="btn">Sign Up</button>
+</form>
+
+
+    <div class="extras">
+      <p>Already have an account? <a href="/login"><b>Login here</b></a></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Quitel Bank. All rights reserved.</p>
+  </footer>
+</body>
+</html>

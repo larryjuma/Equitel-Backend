@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Quitel Bank</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <header class="header">
+    <h2>Welcome, <%= user.fullName %>!</h2>
+    <p>Account Number: <%= user.accountNumber %></p>
+    <a href="/" class="back-home">← Logout / Back to Home</a>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="account-info">
+      <h3>Account Summary</h3>
+      <p><strong>Account Type:</strong> <%= user.accountType %></p>
+      <p><strong>Balance:</strong> $<span class="counter" data-target="<%= user.balance %>">75</span></p>
+      <p><strong>Investments:</strong> $<span class="counter" data-target="<%= user.investments || 0 %>">125</span></p>
+    </section>
+
+    <section class="actions">
+      <h3>Bank Features</h3>
+      <div class="features">
+        <button class="btn">Deposit</button>
+        <button class="btn">Withdraw</button>
+        <button class="btn">Invest</button>
+        <button class="btn">Transaction History</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Quitel Bank. All rights reserved.</p>
+  </footer>
+
+  <!-- Live Counter Script -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100; // adjust speed
+
+        if(current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+  </script>
+</body>
+</html>

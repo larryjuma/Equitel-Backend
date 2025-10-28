@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Quitel Bank</title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  <!-- Header -->
+
+  <header class="header">
+  <h2>Quitel Bank</h2>
+  <p>Secure Login to Your Account</p>
+  <a href="/" class="back-home">← Back to Home</a>
+</header>
+
+
+
+  <!-- Main Login Section -->
+  <main class="login-container">
+    <h3>Welcome Back</h3>
+    <p>Please login to continue managing your finances.</p>
+
+    <form action="/login" method="post" class="form">
+     <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <div class="extras">
+      <a href="#"><b>Forgot Password?</b></a>
+      <p>Don’t have an account? <a href="/register"><b>Register here</b></a></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Quitel Bank. All rights reserved.</p>
+  </footer>
+</body>
+</html>
